@@ -6,5 +6,5 @@ class Settings():
         self.screen_title = "Alien Invasions"
 
         self.screen_bg_color = 230, 230, 230
-        self.jet_speed_factor = 1.0
+        self.jet_speed_factor = 1
 

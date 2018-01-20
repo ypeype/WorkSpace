@@ -12,8 +12,8 @@ class Jet():
         self.image_rect = self.image.get_rect()
         self.screen_rect = self.screen.get_rect()
 
-        self.image_rect.centerx = self.screen_rect.centerx
-        self.image_rect.bottom = self.screen_rect.bottom
+        self.image_rect.centerx = float(self.screen_rect.centerx)
+        self.image_rect.centery = float(self.screen_rect.centery)
 
         self.moving_right = False
         self.moving_left = False
@@ -22,18 +22,20 @@ class Jet():
 
         self.rect = self.image_rect
 
+
+
     def blitme(self):
         self.screen.blit(self.image, self.image_rect)
 
     def update(self):
         if self.moving_right and self.image_rect.right < self.screen_rect.right:
-            self.rect.right += self.ai_set.jet_speed_factor
+            self.rect.centerx += self.ai_set.jet_speed_factor
         elif self.moving_left and self.image_rect.left > 0:
-            self.rect.left -= self.ai_set.jet_speed_factor
+            self.rect.centerx -= self.ai_set.jet_speed_factor
         elif self.moving_up and self.image_rect.top > self.screen_rect.top :
-            self.rect.top -= self.ai_set.jet_speed_factor
+            self.rect.centery -= self.ai_set.jet_speed_factor
         elif self.moving_down and self.image_rect.bottom < self.screen_rect.bottom:
-            self.rect.bottom += self.ai_set.jet_speed_factor
+            self.rect.centery += self.ai_set.jet_speed_factor
 
         self.image_rect = self.rect
 

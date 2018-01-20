@@ -12,8 +12,7 @@ def check_events(jet):
             key_up(event,jet)
 
 
-
-def screen_update(screen,jet,ai_set):
+def screen_update(screen, jet, ai_set):
     screen.fill(ai_set.screen_bg_color)
     jet.blitme()
     jet.update()
