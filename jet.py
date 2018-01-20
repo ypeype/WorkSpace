@@ -27,16 +27,12 @@ class Jet():
 
     def update(self):
         if self.moving_right and self.image_rect.right < self.screen_rect.right:
-            print("key right")
             self.rect.right += self.ai_set.jet_speed_factor
         elif self.moving_left and self.image_rect.left > 0:
-            print("key left")
             self.rect.left -= self.ai_set.jet_speed_factor
         elif self.moving_up and self.image_rect.top > self.screen_rect.top :
-            print("key up??")
             self.rect.top -= self.ai_set.jet_speed_factor
         elif self.moving_down and self.image_rect.bottom < self.screen_rect.bottom:
-            print("key down")
             self.rect.bottom += self.ai_set.jet_speed_factor
 
         self.image_rect = self.rect
